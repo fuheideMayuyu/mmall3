@@ -1,2 +1,15 @@
+'use strict';
+
 require('./index.css');
-require('../module.js');
+
+var _mm = require('util/mm.js');
+
+_mm.request({
+  url:'/api/pro/list',
+  success:function(res){
+    console.log(res);
+  },
+  error:function(errMsg){
+    console.log(errMsg);
+  }
+})
