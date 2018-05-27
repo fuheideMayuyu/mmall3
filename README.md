@@ -54,3 +54,20 @@ if('dev' === WEBPACK_ENV){
 
 ### 关于跨域 jsonp和 webpack proxy代理
 - 因为后端接口格式不是jsonp格式，所以不能使用jsonp的方式跨域。
+- proxy配置
+```
+ proxy:{
+      '/api':{
+        // 指定代理的地址
+        target:'http://happymmall.com',
+        pathRewrite:{'^/api': ''},
+        // 改变源代码的url
+        changeOrigin:true,
+        // 安全性
+        secure:false
+      }
+    },
+// url 请求以 api开头
+ url:'/api/product/list.do?keyword=1',
+
+```

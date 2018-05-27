@@ -37,7 +37,15 @@ var config = {
   devServer: {
     open: true,
     proxy:{
-
+      '/api':{
+        // 指定代理的地址
+        target:'http://happymmall.com',
+        pathRewrite:{'^/api': ''},
+        // 改变源代码的url
+        changeOrigin:true,
+        // 
+        secure:false
+      }
     }
   },
   // 路径配置
