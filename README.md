@@ -5,10 +5,13 @@
 ----floor 商品图
 ----icon 加载图标
 |-page 页面js文件
+----common 通用css、js
+
 |-service 服务器相关文件
 |-util
 ----mm.js 功能封装
 |-view 页面html文件
+----layout 通用页面
 
 ### webpack 相关配置(webpack1.15.0)
 - 初始化项目文件 npm init

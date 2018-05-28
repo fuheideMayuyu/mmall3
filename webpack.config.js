@@ -25,6 +25,7 @@ var config = {
     'common': ['./src/page/common/index.js'],
     'index': ['./src/page/index/index.js'],
     'login': ['./src/page/login/index.js'],
+    'result': ['./src/page/result/index.js'],
   },
   output: {
     path: './dist',
@@ -66,6 +67,9 @@ var config = {
       {
         test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/,
         loader: 'url-loader?limit=100&name=resource/[name].[ext]'
+      },
+      {
+        test:/\.string/, loader: 'html-loader'
       }
     ]
   },
@@ -78,8 +82,9 @@ var config = {
     // 把css单独打包到文件里
     new ExtractTextPlugin("css/[name].css"),
     // html模板处理
-    new HtmlWebpackPlugin(getHtmlConfig('index')),
-    new HtmlWebpackPlugin(getHtmlConfig('login')),
+    new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
+    new HtmlWebpackPlugin(getHtmlConfig('login', '用户登录')),
+    new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果')),
   ],
 };
 
