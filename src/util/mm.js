@@ -27,12 +27,12 @@ var _mm = {
         }
         // 请求数据错误
         else if (1 === res.status) {
-          typeof param.success === 'function' && param.error(res.msg)
+          typeof param.error === 'function' && param.error(res.msg)
         }
       },
       //数据请求失败
       error: function (err) {
-        typeof param.success === 'function' && param.error(err.statusText);
+        typeof param.error === 'function' && param.error(err.statusText);
       }
     });
   },
@@ -61,7 +61,7 @@ var _mm = {
 
   // 成功提示
   successTips: function (msg) {
-    alert(mag || '操作成功！')
+    alert(msg || '操作成功！')
   },
 
   // 错误提示
@@ -71,7 +71,7 @@ var _mm = {
 
   // 验证手机号、邮箱、非空验证
   // $.trim去除两端空格
-  validata: function (value, type) {
+  validate: function (value, type) {
     var value = $.trim(value);
     // 非空验证
     // require是自定义的字符串，可以想取什么取什么
@@ -93,7 +93,7 @@ var _mm = {
   doLogin: function () {
     // 全局跳转到登录页,在登录完成之后跳转回原页面
     // encodeURIComponent:对路径进行解码，防止路径因为被截断二无法跳转
-    window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
+    window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);
   },
 
   // 回到首页

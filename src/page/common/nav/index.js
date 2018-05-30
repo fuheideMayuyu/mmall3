@@ -22,7 +22,7 @@ var nav = {
     });
     // 注册事件
     $('.js-register').click(function () {
-      window.location.href = './register.html';
+      window.location.href = './user-register.html';
     });
     // 退出登录事件
     $('.js-logout').click(function () {
@@ -35,16 +35,14 @@ var nav = {
       });
     });
   },
-  //加载用户信息
+  // 加载用户信息
   loadUserInfo: function () {
-    // 检查登录状态
     _user.checkLogin(function (res) {
-      // 隐藏注册，登录按钮，显示以登录状态
-      // .find寻找后代元素， .text:输出被选的元素的文本内容
-      $('.user.not-login').hide().siblings('.user.login').show().find('.username').text(res.username);
+      $('.user.not-login').hide().siblings('.user.login').show()
+        .find('.username').text(res.username);
     }, function (errMsg) {
       // do nothing
-    })
+    });
   },
   // 加载购物车数量
   loadCartCount: function () {

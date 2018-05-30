@@ -74,3 +74,25 @@ if('dev' === WEBPACK_ENV){
  url:'/api/product/list.do?keyword=1',
 
 ```
+### 接口地址变化
+```
+原地址：
+target:'http://happymmall.com',
+新地址：
+target:'http://test.happymmall.com',
+```
+#### 登录页面逻辑
+```
+1.初始化
+ page={
+  init:function(){
+
+  }
+};
+$(function(){
+  page.init();
+})
+2.注册登录点击事件
+3.因为登录需要提交表单，编写提交表单方法
+4.提交表单时需要字段验证，编写字段验证方法
+```
