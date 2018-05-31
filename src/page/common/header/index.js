@@ -5,6 +5,7 @@ var _mm = require('util/mm.js');
 
 var header = {
   init: function () {
+    this.onLoad();
     this.bindEvent();
   },
   // 组件加载时，获取输入框信息
